@@ -67,7 +67,7 @@ int main() {
                 if (shot > 0) {
                     userScore += shot;
                     possessionIndex = -1;
-                    cout << "you made " << shot << " points"
+                    cout << "you made " << shot << " points";
                     break;
                 } else if (0 == rand() % 2) {
                     cout << "rebound saved!";
@@ -97,10 +97,20 @@ int main() {
                 break;
             } else {
                 cout << "invalid input, try again";
-                break
+                break;
             }
-        } else {
-
-        }     
+        } else if (rand()%5 <= 2) {
+            oppScore += rand()%3 + 1;
+            possessionIndex = rand() % 5;
+            cout << "opponent made the shot";
+            break;
+        } else if (rand()%2 == 0){
+            cout << "opponent missed, but caught rebound";
+            break;
+        }  else {
+            cout << "opponent missed the shot and rebound";
+            possessionIndex = rand() % 5;
+            break;
+        }
     }
 }
